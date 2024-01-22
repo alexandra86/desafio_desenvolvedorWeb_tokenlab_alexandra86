@@ -51,4 +51,8 @@ Caso você seja candidato a CLT, será obrigatório ser desenvolvido na arquitet
     <a href="https://calendly.com/recrutamentotokenlab/web-entrevista-com-apresentacao-de-desafio?month=2024-01">Agenda Gabriel Missali</a><br>
     
 -> Ao finalizar o desafio, responda esta pergunta com o link do repositório (GitHub, Bitbucket etc..)
+
+-> Assistir ao <a href="https://youtu.be/WpMBQBGPHl4">video</a> antes da entrevista, para conhecer um pouco mais sobre a área de web na Tokenlab.
+
+Bom desafio! ✌🏽😉
 </p><br>
