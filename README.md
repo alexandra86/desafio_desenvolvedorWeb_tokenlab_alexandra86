@@ -43,4 +43,12 @@ Caso você seja candidato a CLT, será obrigatório ser desenvolvido na arquitet
 ✅ Não será necessário fazer deploy em servidor, apenas apresentação na máquina do candidato e envio antecipado do código, mas se quiser pode;</br>
 ✅ Pense no polimento do seu projeto, na qualidade do código e em boas práticas de projetos em produção.</br>
 
+## 🟡 Orientações importantes:
+
+-> O prazo para a entrega do projeto é de 1 (uma) semana. Esse material pode ser revisitado quantas vezes precisar até que responda a ele com o link do seu desafio.</br>
+
+-> Utilize o link abaixo para marcar a entrevista e apresentação do desafio:</br>
+    <a href="https://calendly.com/recrutamentotokenlab/web-entrevista-com-apresentacao-de-desafio?month=2024-01">Agenda Gabriel Missali</a><br>
+    
+-> Ao finalizar o desafio, responda esta pergunta com o link do repositório (GitHub, Bitbucket etc..)
 </p><br>
