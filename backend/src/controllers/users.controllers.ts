@@ -27,7 +27,7 @@ export const retrieveUserController = async (
   request: Request,
   response: Response
 ) => {
-  const userId = request.user.id;
+  const userId = request.params.userId;
   const { user, events } = await retrieveUserService(userId);
 
   const userWithEvents = {
@@ -43,7 +43,7 @@ export const updateUserController = async (
   response: Response
 ) => {
   const userData: IUpdateUser = request.body;
-  const userId = request.params.id;
+  const userId = request.params.userId;
 
   const updateUser = await updateUserService(userData, userId);
 
@@ -54,7 +54,7 @@ export const deleteUserController = async (
   request: Request,
   response: Response
 ) => {
-  const userId = request.params.id;
+  const userId = request.params.userId;
   await deleteUserService(userId);
 
   return response.status(204).send();
