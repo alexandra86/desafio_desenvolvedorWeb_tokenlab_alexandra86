@@ -2,6 +2,9 @@ import { Router } from "express";
 import { ensureUniqueEmailMiddleware } from "../middlewares/ensureUniqueEmail.middleware";
 import { updateUserSchema, userSchema } from "../schemas/users.schema";
 import { ensureDataIsValidMiddleware } from "../middlewares/ensureDataIsValid.middleware";
+import { ensureTokenIsValidMiddleware } from "../middlewares/ensureTokenIsValid.middleware";
+import { ensureIsAuthenticatedMiddleware } from "../middlewares/ensureIsAuthenticated.middleware";
+import { ensureUserExistsMiddleware } from "../middlewares/ensureUserExists.middleware";
 import {
   createUserController,
   deleteUserController,
@@ -9,9 +12,6 @@ import {
   retrieveUserController,
   updateUserController,
 } from "../controllers/users.controllers";
-import { ensureTokenIsValidMiddleware } from "../middlewares/ensureTokenIsValid.middleware";
-import { ensureIsAuthenticatedMiddleware } from "../middlewares/ensureIsAuthenticated.middleware";
-import { ensureUserExistsMiddleware } from "../middlewares/ensureUserExists.middleware";
 
 export const usersRoutes = Router();
 
