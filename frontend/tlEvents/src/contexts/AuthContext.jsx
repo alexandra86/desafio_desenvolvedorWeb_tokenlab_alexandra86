@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [modalIsEventOpen, setIsEventOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  //   const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <AuthContext.Provider
