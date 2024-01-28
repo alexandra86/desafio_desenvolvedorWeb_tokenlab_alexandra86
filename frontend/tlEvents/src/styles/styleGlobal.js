@@ -32,11 +32,18 @@ button{
     --bg-gray-2: #31343D;
     --bg-gray-3: #545454;
     --bg-gray-4: #D9D9D9;
+    --bg-gray-5: #d9e8fc;
+    --bg-gray-6: #333333;
+    --bg-gray-7: #343b41;
+    --bg-gray-8: #999999;
+    --bg-gray-9: #e0e0e0;
+
     --bg-pink: #DA75FF;
     --bg-orange: #FFAB5C;
     --bg-white: #FFFFFF;
     --bg-black: #000000;
     --bg-purple: #191970;
+    --bg-red: #e03d23;
 
 }
 
