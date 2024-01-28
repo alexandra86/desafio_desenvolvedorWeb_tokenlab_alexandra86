@@ -60,9 +60,9 @@ export const StyledLoginPage = styled.div`
     font-weight: 400;
     font-size: 1rem;
     background-color: var(--bg-gray-5);
-    color: #000000;
+    color: var(--bg-black);
     outline: none;
-    border: 0.1125rem solid #8698d9;
+    border: 0.1125rem solid var(--bg-gray-1);
     border-radius: 0.5rem;
   }
 
