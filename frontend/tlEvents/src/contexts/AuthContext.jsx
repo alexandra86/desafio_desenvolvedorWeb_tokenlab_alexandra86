@@ -9,10 +9,9 @@ export const AuthContext = createContext({});
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newLoading, setNewLoading] = useState(true);
-  const [modalIsEventOpen, setIsEventOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const navigate = useNavigate();
 
@@ -32,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("@USER_ID", user.id);
 
-      getUser();
+      GetUser();
 
       setTimeout(() => {
         navigate("/dashboard");
@@ -44,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const getUser = async () => {
+  const GetUser = async () => {
     const tokenValidate = localStorage.getItem("@TOKEN");
     const userId = localStorage.getItem("@USER_ID");
 
@@ -65,7 +64,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getUser();
+    GetUser();
   }, []);
 
   const NewRegister = async (data) => {
@@ -83,6 +82,33 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const GetEvents = async () => {
+      try {
+        const tokenValidate = localStorage.getItem("@TOKEN");
+
+        if (!tokenValidate) {
+          setLoading(false);
+          return;
+        }
+
+        api.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${tokenValidate}`;
+
+        const response = await api.get("/events");
+
+        setEvents(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    GetEvents();
+  }, []);
+
   return (
     <AuthContext.Provider
       value={{
@@ -92,12 +118,11 @@ export const AuthProvider = ({ children }) => {
         setLoading,
         newLoading,
         setNewLoading,
-        modalIsEventOpen,
-        setIsEventOpen,
-        selectedEvent,
-        setSelectedEvent,
         NewLogin,
         NewRegister,
+        events,
+        setEvents,
+        GetUser,
       }}
     >
       {children}
