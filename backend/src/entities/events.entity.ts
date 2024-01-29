@@ -19,7 +19,7 @@ export class Event {
   description: string;
 
   @Column({ type: "date", default: () => "CURRENT_DATE" })
-  dateEvent: Date;
+  dateEvent: string;
 
   @Column({ type: "time", default: () => "CURRENT_TIMESTAMP" })
   startTime: string;
