@@ -7,11 +7,14 @@ import perfilImagem from "../../assets/perfilImage.png";
 import { Footer } from "../../components/Footer";
 import { CardEvent } from "../../components/CardEvent";
 import { useNavigate } from "react-router-dom";
-// import { EventContext } from "../../contexts/EventContext";
+import { EventContext } from "../../contexts/EventContext";
+import { CreateEventtModal } from "../../components/CreateEventModal";
+import { EditEventModal } from "../../components/EditEventModal";
 
 export const DashboardPage = () => {
   const { user, newLoading } = useContext(AuthContext);
-  // const { setEventsToday } = useContext(EventContext);
+  const { modalIsEventOpen, handleEventModal, modalIsEditEventOpen } =
+    useContext(EventContext);
 
   const navigate = useNavigate();
 
@@ -78,7 +81,13 @@ export const DashboardPage = () => {
               <p className="fraseWelcome">Welcome,</p>
               <p className="fraseWelcome">{user.user.name}</p>
             </div>
-            <button className="buttonNewEvent"> + Add New Event</button>
+            <button
+              className="buttonNewEvent"
+              onClick={() => handleEventModal()}
+            >
+              {" "}
+              + Add New Event
+            </button>
           </header>
           <main>
             <h1 className="tittleDashboard">Events</h1>
@@ -89,6 +98,8 @@ export const DashboardPage = () => {
             </ul>
           </main>
           <Footer />
+          {modalIsEventOpen && <CreateEventtModal />}
+          {modalIsEditEventOpen && <EditEventModal />}
         </StyledDashboardPage>
       )}
     </>

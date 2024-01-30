@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCardEvent = styled.li`
-  max-width: 9.75rem;
+  max-width: 16.75rem;
   width: 100%;
   height: auto;
   min-height: 11.75rem;
@@ -22,7 +22,7 @@ export const StyledCardEvent = styled.li`
   }
 
   .cardDescription {
-    margin-bottom: 1.188rem;
+    margin-bottom: 0.188rem;
     width: 100%;
     height: 3.063rem;
     color: var(--bg-black);

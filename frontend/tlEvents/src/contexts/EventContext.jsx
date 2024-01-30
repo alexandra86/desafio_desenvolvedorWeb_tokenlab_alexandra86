@@ -56,7 +56,7 @@ export const EventProvider = ({ children }) => {
       await api.delete(`/events/${eventId}`);
       GetUser();
 
-      toast.info("Contact removed successfully! 😎");
+      toast.info("Event removed successfully! 😎");
     } catch (error) {
       toast.error("Something went wrong! 😢");
     } finally {
@@ -68,11 +68,11 @@ export const EventProvider = ({ children }) => {
     try {
       setLoading(true);
 
-      await api.patch(`/events/${data.eventId}`, data);
+      await api.patch(`/events/${data.id}`, data);
       GetUser();
 
       setIsEditOpen(false);
-      toast.success("Contact edited successfully! 😎");
+      toast.success("Event edited successfully! 😎");
     } catch (error) {
       toast.error("Something went wrong! 😢");
     } finally {
