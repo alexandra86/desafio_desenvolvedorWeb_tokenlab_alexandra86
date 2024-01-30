@@ -16,6 +16,7 @@ export const EventProvider = ({ children }) => {
   const [modalIsEditEventOpen, setIsEditEventOpen] = useState(false);
   const [modalIsDeleteEventOpen, setIsDeleteEventOpen] = useState(false);
   const [selectDeleteEvent, setSelectDeleteEvent] = useState(null);
+  const [eventsToday, setEventsToday] = useState([]);
 
   const handleEventModal = () => {
     setIsEventOpen(!modalIsEventOpen);
@@ -103,6 +104,8 @@ export const EventProvider = ({ children }) => {
         CreateEvent,
         RemoveEvent,
         EditEvent,
+        eventsToday,
+        setEventsToday,
       }}
     >
       {children}

@@ -99,7 +99,6 @@ export const AuthProvider = ({ children }) => {
         const response = await api.get("/events");
 
         setEvents(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
       } finally {
