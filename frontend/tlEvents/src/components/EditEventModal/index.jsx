@@ -13,8 +13,6 @@ export const EditEventModal = () => {
     useContext(EventContext);
   const { loading } = useContext(AuthContext);
 
-  console.log(selectedEvent);
-
   const {
     register,
     handleSubmit,

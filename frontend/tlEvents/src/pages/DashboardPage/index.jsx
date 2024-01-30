@@ -10,11 +10,16 @@ import { useNavigate } from "react-router-dom";
 import { EventContext } from "../../contexts/EventContext";
 import { CreateEventtModal } from "../../components/CreateEventModal";
 import { EditEventModal } from "../../components/EditEventModal";
+import { DeleteEventModal } from "../../components/DeleteEventModal";
 
 export const DashboardPage = () => {
   const { user, newLoading } = useContext(AuthContext);
-  const { modalIsEventOpen, handleEventModal, modalIsEditEventOpen } =
-    useContext(EventContext);
+  const {
+    modalIsEventOpen,
+    handleEventModal,
+    modalIsEditEventOpen,
+    modalIsDeleteEventOpen,
+  } = useContext(EventContext);
 
   const navigate = useNavigate();
 
@@ -100,6 +105,7 @@ export const DashboardPage = () => {
           <Footer />
           {modalIsEventOpen && <CreateEventtModal />}
           {modalIsEditEventOpen && <EditEventModal />}
+          {modalIsDeleteEventOpen && <DeleteEventModal />}
         </StyledDashboardPage>
       )}
     </>

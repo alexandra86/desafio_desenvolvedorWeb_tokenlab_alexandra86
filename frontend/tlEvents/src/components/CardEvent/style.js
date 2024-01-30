@@ -7,7 +7,7 @@ export const StyledCardEvent = styled.li`
   min-height: 11.75rem;
   background-color: var(--bg-gray-4);
   border-radius: 0.625rem;
-  padding: 0.125rem;
+  padding: 1.125rem;
   display: flex;
   flex-direction: column;
 

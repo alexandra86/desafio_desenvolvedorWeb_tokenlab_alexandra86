@@ -6,14 +6,15 @@ import moment from "moment";
 import "moment/locale/pt-br";
 
 export const CardEvent = (event) => {
-  const currentDateTime = new Date(event.event.dateEvent);
+  const currentDate = moment(event.event.dateEvent, moment.ISO_8601, true);
   const currentStartTime = DateTime.fromISO(event.event.startTime);
   const currentEndTime = DateTime.fromISO(event.event.endTime);
-  const formattedDate = moment(currentDateTime).format("DD/MM/YYYY");
+  const formattedDate = moment(currentDate).format("DD/MM/YYYY");
   const formattedStartTime = currentStartTime.toFormat("HH:mm");
   const formattedEndTime = currentEndTime.toFormat("HH:mm");
 
-  const { handleEditEventModal, setSelectedEvent } = useContext(EventContext);
+  const { handleEditEventModal, setSelectedEvent, handleDeleteEventModal } =
+    useContext(EventContext);
 
   return (
     <StyledCardEvent>
@@ -33,7 +34,12 @@ export const CardEvent = (event) => {
         >
           Edit
         </button>
-        <button className="cardDeleteButton">Delete</button>
+        <button
+          className="cardDeleteButton"
+          onClick={() => handleDeleteEventModal(event.event.id)}
+        >
+          Delete
+        </button>
       </div>
     </StyledCardEvent>
   );
