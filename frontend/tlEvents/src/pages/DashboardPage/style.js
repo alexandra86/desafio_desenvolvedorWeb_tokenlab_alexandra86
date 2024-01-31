@@ -119,4 +119,12 @@ export const StyledDashboardPage = styled.div`
     align-items: center;
     gap: 3.313rem;
   }
+
+  .fraseNotEvent {
+    color: var(--bg-white);
+    text-align: center;
+    font-family: var(--family-1);
+    font-size: 1rem;
+    font-weight: 400;
+  }
 `;

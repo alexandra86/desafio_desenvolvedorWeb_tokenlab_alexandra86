@@ -16,7 +16,7 @@ export const EventProvider = ({ children }) => {
   const [modalIsEditEventOpen, setIsEditEventOpen] = useState(false);
   const [modalIsDeleteEventOpen, setIsDeleteEventOpen] = useState(false);
   const [selectDeleteEvent, setSelectDeleteEvent] = useState(null);
-  const [eventsToday, setEventsToday] = useState([]);
+  const [displayEventsToday, setDisplayEventsToday] = useState(false);
 
   const handleEventModal = () => {
     setIsEventOpen(!modalIsEventOpen);
@@ -29,6 +29,14 @@ export const EventProvider = ({ children }) => {
   const handleDeleteEventModal = (event) => {
     setSelectDeleteEvent(event);
     setIsDeleteEventOpen(!modalIsDeleteEventOpen);
+  };
+
+  const showMyEvents = () => {
+    setDisplayEventsToday(false);
+  };
+
+  const showEventsTodayAgain = () => {
+    setDisplayEventsToday(true);
   };
 
   const CreateEvent = async (data) => {
@@ -104,8 +112,10 @@ export const EventProvider = ({ children }) => {
         CreateEvent,
         RemoveEvent,
         EditEvent,
-        eventsToday,
-        setEventsToday,
+        displayEventsToday,
+        setDisplayEventsToday,
+        showMyEvents,
+        showEventsTodayAgain,
       }}
     >
       {children}

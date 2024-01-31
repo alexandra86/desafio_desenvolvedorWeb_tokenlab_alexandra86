@@ -19,6 +19,9 @@ export const DashboardPage = () => {
     handleEventModal,
     modalIsEditEventOpen,
     modalIsDeleteEventOpen,
+    displayEventsToday,
+    showMyEvents,
+    showEventsTodayAgain,
   } = useContext(EventContext);
 
   const navigate = useNavigate();
@@ -30,17 +33,18 @@ export const DashboardPage = () => {
     localStorage.removeItem("@USER_ID");
   };
 
-  const goDashbord = () => {
-    navigate("/dashboard");
-  };
-
   const showEventsToday = () => {
-    const today = new Date().toISOString().split("T")[0];
-    const eventsToday = user.events.filter(
-      (event) => event.dateEvent === today
-    );
+    const dateToday = new Date();
+    const formateddDate = dateToday.toLocaleDateString("pt-BR");
 
-    return eventsToday;
+    const eventToday = user.events.filter((date) => {
+      const partsData = date.dateEvent.split("-");
+      const dateEventoFormatada = `${partsData[2]}/${partsData[1]}/${partsData[0]}`;
+
+      return dateEventoFormatada === formateddDate;
+    });
+
+    return eventToday;
   };
 
   return (
@@ -56,14 +60,11 @@ export const DashboardPage = () => {
               </button>
               <button
                 className="buttonsNavigation"
-                onClick={() => showEventsToday()}
+                onClick={showEventsTodayAgain}
               >
                 Today
               </button>
-              <button
-                className="buttonsNavigation"
-                onClick={() => goDashbord()}
-              >
+              <button className="buttonsNavigation" onClick={showMyEvents}>
                 My Events
               </button>
             </nav>
@@ -96,11 +97,30 @@ export const DashboardPage = () => {
           </header>
           <main>
             <h1 className="tittleDashboard">Events</h1>
-            <ul className="areaCards">
-              {user.events.map((event) => (
-                <CardEvent key={event.id} event={event} />
-              ))}
-            </ul>
+
+            {displayEventsToday && (
+              <ul className="areaCards">
+                {showEventsToday().length > 0 ? (
+                  showEventsToday().map((event) => (
+                    <CardEvent key={event.id} event={event} />
+                  ))
+                ) : (
+                  <p className="fraseNotEvent">You have no events today!</p>
+                )}
+              </ul>
+            )}
+
+            {!displayEventsToday && (
+              <ul className="areaCards">
+                {user.events.length > 0 ? (
+                  user.events.map((event) => (
+                    <CardEvent key={event.id} event={event} />
+                  ))
+                ) : (
+                  <p className="fraseNotEvent">You have no events scheduled!</p>
+                )}
+              </ul>
+            )}
           </main>
           <Footer />
           {modalIsEventOpen && <CreateEventtModal />}
