@@ -74,6 +74,11 @@ export const StyledCardEvent = styled.li`
     font-weight: 400;
   }
 
+  .cardEditButton:hover {
+    background-color: var(--bg-dark-pink);
+    font-weight: 500;
+  }
+
   .cardDeleteButton {
     max-width: 3rem;
     width: 100%;
@@ -86,6 +91,11 @@ export const StyledCardEvent = styled.li`
     font-family: var(--family-1);
     font-size: 0.75rem;
     font-weight: 400;
+  }
+
+  .cardDeleteButton:hover {
+    background-color: var(--bg-dark-orange);
+    font-weight: 500;
   }
 
   @media (max-width: 56.25rem) {

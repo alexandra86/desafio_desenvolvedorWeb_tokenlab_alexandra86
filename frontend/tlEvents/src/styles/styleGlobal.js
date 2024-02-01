@@ -57,7 +57,9 @@ button{
     --bg-gray-9: #e0e0e0;
 
     --bg-pink: #DA75FF;
+    --bg-dark-pink:#A80359;
     --bg-orange: #FFAB5C;
+    --bg-dark-orange:#FF6908;
     --bg-white: #FFFFFF;
     --bg-black: #000000;
     --bg-purple: #191970;
