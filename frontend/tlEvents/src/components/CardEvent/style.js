@@ -7,9 +7,11 @@ export const StyledCardEvent = styled.li`
   min-height: 11.75rem;
   background-color: var(--bg-gray-4);
   border-radius: 0.625rem;
+  border: 2px solid var(--bg-gray-3);
   padding: 1.125rem;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
   .cardTitle {
     margin-top: 0.563rem;
@@ -84,5 +86,20 @@ export const StyledCardEvent = styled.li`
     font-family: var(--family-1);
     font-size: 0.75rem;
     font-weight: 400;
+  }
+
+  @media (max-width: 56.25rem) {
+    .cardDescription {
+      height: 5.063rem;
+      font-size: 0.75rem;
+    }
+
+    .cardHours {
+      font-size: 0.75rem;
+    }
+
+    .cardDivButtons {
+      gap: 0.625rem;
+    }
   }
 `;

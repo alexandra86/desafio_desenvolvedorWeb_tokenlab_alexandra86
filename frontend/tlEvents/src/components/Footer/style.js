@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  position: fixed;
-  bottom: 0;
   background: var(--bg-gray-2);
   width: 100%;
   padding: 1.25rem 0;

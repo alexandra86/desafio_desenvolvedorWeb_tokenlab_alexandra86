@@ -95,7 +95,7 @@ export const DashboardPage = () => {
               + Add New Event
             </button>
           </header>
-          <main>
+          <main className="mainDashboard">
             <h1 className="tittleDashboard">Events</h1>
 
             {displayEventsToday && (

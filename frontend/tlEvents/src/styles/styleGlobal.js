@@ -8,6 +8,24 @@ export const GlobalStyle = createGlobalStyle`
       
 }
 
+body,
+html {
+  overflow-x: hidden !important;
+
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--bg-gray-1);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bg-gray-3);
+    
+  }
+}
+
 ul, ol, li{
     list-style: none;
 }
@@ -45,6 +63,7 @@ button{
     --bg-purple: #191970;
     --bg-red: #e03d23;
 
+    --bg-none:none;
 }
 
 `;

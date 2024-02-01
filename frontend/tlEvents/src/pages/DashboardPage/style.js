@@ -65,6 +65,11 @@ export const StyledDashboardPage = styled.div`
     font-weight: 400;
   }
 
+  .buttonsNavigation:hover {
+    background-color: var(--bg-gray-1);
+    font-weight: 600;
+  }
+
   .welcome {
     max-width: 90rem;
     width: 100%;
@@ -104,6 +109,18 @@ export const StyledDashboardPage = styled.div`
     font-weight: 400;
   }
 
+  .buttonNewEvent:hover {
+    background-color: var(--bg-gray-1);
+    font-weight: 600;
+  }
+
+  .mainDashboard {
+    max-width: 90rem;
+    width: 100%;
+    padding: 1.688rem 6.563rem 1.688rem 4.188rem;
+    background-color: var(--bg-gray-1);
+  }
+
   .tittleDashboard {
     margin-top: 3.125rem;
     margin-bottom: 3.313rem;
@@ -115,9 +132,13 @@ export const StyledDashboardPage = styled.div`
   }
 
   .areaCards {
+    height: auto;
+    background-color: var(--bg-gray-1);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 3.313rem;
+    flex-wrap: wrap;
   }
 
   .fraseNotEvent {
@@ -126,5 +147,74 @@ export const StyledDashboardPage = styled.div`
     font-family: var(--family-1);
     font-size: 1rem;
     font-weight: 400;
+  }
+
+  @media (max-width: 68.5rem) {
+    .logo {
+      max-height: 3.438rem;
+      max-width: 3.938rem;
+    }
+
+    .headerDashboard {
+      padding: 0.085rem;
+    }
+
+    .navigation {
+      justify-content: space-evenly;
+    }
+
+    .welcome {
+      padding: 0.085rem;
+    }
+
+    .areaFraseWelcome {
+      gap: 0.5rem;
+    }
+
+    .buttonNewEvent {
+      width: 50%;
+      height: 75%;
+      background-color: var(--bg-gray-3);
+      font-size: 0.75rem;
+    }
+
+    .mainDashboard {
+      padding: 1rem;
+    }
+    .areaCards {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 56.25rem) {
+    .buttonsNavigation {
+      background-color: var(--bg-none);
+      font-size: 0.75rem;
+    }
+
+    .imageUser {
+      max-height: 3.313rem;
+      height: 100%;
+      max-width: 3.313rem;
+    }
+
+    .fraseWelcome {
+      font-size: 0.875rem;
+    }
+
+    .areaCards {
+      flex-wrap: nowrap;
+      overflow: scroll;
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 34.375rem) {
+    .areaCards {
+      flex-wrap: nowrap;
+      overflow: scroll;
+      justify-content: flex-start;
+    }
   }
 `;
