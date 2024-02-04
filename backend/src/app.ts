@@ -5,6 +5,7 @@ import { handleErrors } from "./errors";
 import { usersRoutes } from "./routers/users.routes";
 import { loginRoutes } from "./routers/login.routes";
 import { eventsRoutes } from "./routers/events.routes";
+import notificationEmailRoutes from "./routers/notificationEmail.route";
 
 const app: Application = express();
 
@@ -17,6 +18,8 @@ app.use("/login", loginRoutes);
 app.use("/users", usersRoutes);
 
 app.use("/events", eventsRoutes);
+
+app.use("/event-alert", notificationEmailRoutes);
 
 app.use(handleErrors);
 

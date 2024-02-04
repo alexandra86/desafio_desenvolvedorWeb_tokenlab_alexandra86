@@ -5,17 +5,28 @@ import { listEventService } from "../services/events/listEvents.service";
 import { retrieveEventService } from "../services/events/retrieveEvent.service";
 import { updateEventService } from "../services/events/updateEvent.service";
 import { deleteEventService } from "../services/events/deleteEvent.service";
+import notificationEmailService from "../services/notificationEmail/notificationEmail.service";
 
 export const createEventController = async (
   request: Request,
   response: Response
 ) => {
-  const eventData: IEvent = request.body;
-  const userId = request.user.id;
+  try {
+    const eventData: IEvent = request.body;
+    const userId = request.user.id;
 
-  const newEvent = await createEventService(eventData, userId);
+    const newEvent = await createEventService(eventData, userId);
 
-  return response.status(201).json(newEvent);
+    await notificationEmailService.checkUpcomingEvents();
+
+    return response.status(201).json(newEvent);
+  } catch (error: any) {
+    console.error(
+      "Error creating or notifying about the event:",
+      error.message
+    );
+    return response.status(500).json({ error: "Internal server error." });
+  }
 };
 
 export const listEventsController = async (_: Request, response: Response) => {
