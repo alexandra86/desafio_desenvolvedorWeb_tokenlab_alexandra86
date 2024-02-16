@@ -9,8 +9,8 @@
 
 <h2 font-family="pattaya">Descrição</h2><br>
 <p font-family="robotto" font-size="16px" line-height="34px" align="justify">
-A API é referente a uma aplicação de agendamento de eventos, onde um usuário pode criar um perfil, cadastrar, atualizar ou deletar os seus eventos.
-Ao criar ou editar um evento, é enviado um e-mail de notificação para o usuário, informando que o mesmo está próximo do seu acontecimento.
+A API é referente a uma aplicação de agendamento de eventos, onde um usuário pode criar um perfil, cadastrar, atualizar ou deletar os seus eventos.<br>
+Ao criar ou editar um evento, é enviado um e-mail de notificação para o usuário, informando que o mesmo está próximo do seu acontecimento.<br>
 É feita de forma automática pelo sistema, a exclusão dos eventos, caso já tenham sido realizados.
 </p><br>
 
@@ -23,6 +23,8 @@ Ao criar ou editar um evento, é enviado um e-mail de notificação para o usuá
 <li font-family="robotto" font-size="16px">express: "^4.18.2"</li>
 <li font-family="robotto" font-size="16px">express-async-errors: "^3.1.1"</li>
 <li font-family="robotto" font-size="16px">jsonwebtoken: "^9.0.2"</li>
+<li font-family="robotto" font-size="16px">moment: "2.30.1"</li>
+<li font-family="robotto" font-size="16px">nodemailer: "^6.9.9"</li>
 <li font-family="robotto" font-size="16px">pg: "^8.11.3"</li>
 <li font-family="robotto" font-size="16px">reflect-metadata: "^0.2.1">
 <li font-family="robotto" font-size="16px">typeorm: "0.3.15"</li>
