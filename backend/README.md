@@ -53,6 +53,8 @@ Visão geral do projeto, um pouco das tecnologias usadas.
 
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
+- [Cron](https://classic.yarnpkg.com/en/package/cron)
+- [Nodemailer](https://classic.yarnpkg.com/en/package/nodemailer)
 - [TypeScript](https://www.typescriptlang.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [TypeORM](https://typeorm.io/)
