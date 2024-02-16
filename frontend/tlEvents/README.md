@@ -47,5 +47,5 @@ O projeto representa uma aplicação onde um usuário poderá agendar eventos. P
 </ul><br>
 
 <h2 font-family="pattaya">Link do Deploy via Vercel</h2><br>
-<a href="" font-family="robotto" font-size="16px">TL Events</a>
+<a href="https://tl-events-a4jfi5usm-alexandra86.vercel.app/" font-family="robotto" font-size="16px">TL Events</a>
 
