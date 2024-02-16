@@ -55,13 +55,14 @@ button{
     --bg-gray-7: #343b41;
     --bg-gray-8: #999999;
     --bg-gray-9: #e0e0e0;
+    
 
     --bg-pink: #DA75FF;
     --bg-dark-pink:#A80359;
     --bg-orange: #FFAB5C;
     --bg-dark-orange:#FF6908;
     --bg-white: #FFFFFF;
-    --bg-black: #000000;
+    --bg-black: #030303ff;
     --bg-purple: #191970;
     --bg-red: #e03d23;
 

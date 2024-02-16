@@ -7,11 +7,11 @@ export const StyledCardEvent = styled.li`
   min-height: 11.75rem;
   background-color: var(--bg-gray-4);
   border-radius: 0.625rem;
-  border: 2px solid var(--bg-gray-3);
+  border: 0.125rem solid var(--bg-gray-3);
   padding: 1.125rem;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  animation: cardAnimation 1.5s ease-in;
 
   .cardTitle {
     margin-top: 0.563rem;
@@ -110,6 +110,17 @@ export const StyledCardEvent = styled.li`
 
     .cardDivButtons {
       gap: 0.625rem;
+    }
+  }
+
+  @keyframes cardAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(-70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
     }
   }
 `;

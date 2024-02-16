@@ -56,7 +56,7 @@ export const DashboardPage = () => {
             <img src={logo} alt="logo da TL Events" className="logo" />
             <nav className="navigation">
               <button className="buttonsNavigation" onClick={() => goHome()}>
-                Home
+                Exit
               </button>
               <button
                 className="buttonsNavigation"
