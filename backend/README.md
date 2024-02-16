@@ -396,7 +396,7 @@ Content-type: application/json
 	"id": 3
 }
 ```
-### 1.2. **Listar todos eventos**
+### 3.2. **Listar todos eventos**
 ```
 GET /events
 Host: http://localhost:3000
@@ -516,6 +516,29 @@ Não possui body
 ### Resposta da Requisição:
 ```
 Retorna apenas o status 204.
+```
+
+### 4.1. **Enviar Notificação de evento**
+
+[ Voltar para os Endpoints ](#5-endpoints)
+
+### `/event-alert`
+```
+GET /event-alert
+Host: http://localhost:3000
+Authorization: none.
+Content-type: application/json
+```
+
+### Corpo da Requisição:
+```
+Não possui body.
+```
+### Resposta da Requisição:
+```json
+{
+	"message": "Check upcoming events completed."
+}
 ```
 
 ### Exemplo de possíveis erros de request.
