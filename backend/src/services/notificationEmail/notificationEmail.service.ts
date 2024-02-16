@@ -36,7 +36,7 @@ class NotificationEmailService {
 
   async checkUpcomingEvents(): Promise<void> {
     const eventRepository = AppDataSource.getRepository(Event);
-    const hoje = new Date();
+    const today = new Date();
 
     try {
       const events = await eventRepository.find({
@@ -45,7 +45,7 @@ class NotificationEmailService {
 
       events.forEach(async (event) => {
         const dateOfEvent = new Date(event.dateEvent);
-        const differenceDays = moment(dateOfEvent).diff(moment(hoje), "days");
+        const differenceDays = moment(dateOfEvent).diff(moment(today), "days");
 
         if (differenceDays >= 0 && differenceDays < 1) {
           await this.sendAlertEmail(event.user.email, event.nameEvent);

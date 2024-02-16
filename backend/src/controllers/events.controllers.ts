@@ -54,6 +54,8 @@ export const updateEventController = async (
 
   const updateEvent = await updateEventService(eventData, eventId);
 
+  await notificationEmailService.checkUpcomingEvents();
+
   return response.json(updateEvent);
 };
 
