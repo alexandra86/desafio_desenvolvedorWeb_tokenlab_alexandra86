@@ -4,6 +4,7 @@ export const StyledFooter = styled.footer`
   background: var(--bg-gray-2);
   width: 100%;
   padding: 1.25rem 0;
+  margin-top: auto;
 
   .descriptionFooter {
     text-align: center;

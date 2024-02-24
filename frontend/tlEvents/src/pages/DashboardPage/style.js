@@ -142,6 +142,7 @@ export const StyledDashboardPage = styled.div`
   }
 
   .fraseNotEvent {
+    width: 100%;
     color: var(--bg-white);
     text-align: center;
     font-family: var(--family-1);
@@ -205,7 +206,7 @@ export const StyledDashboardPage = styled.div`
 
     .areaCards {
       flex-wrap: nowrap;
-      overflow: scroll;
+      overflow: auto;
       justify-content: flex-start;
     }
   }
@@ -213,7 +214,7 @@ export const StyledDashboardPage = styled.div`
   @media (max-width: 34.375rem) {
     .areaCards {
       flex-wrap: nowrap;
-      overflow: scroll;
+      overflow: auto;
       justify-content: flex-start;
     }
   }
